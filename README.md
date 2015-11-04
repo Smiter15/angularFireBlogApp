@@ -3,7 +3,7 @@ angularfire project. Users can register an account, login securely and post in r
 
 
 	
-git clone https://github.com/jay3dec/AngularJS_Firebase_Part2.git
+git clone https://github.com/Smiter15/angularFireBlogApp.git
 After cloning the source code, navigate to the project directory and install the required dependencies.
 
 cd angularFireBlogApp
