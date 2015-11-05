@@ -14,11 +14,11 @@
             <h1>AngularJS & Firebase App</h1>
         </div>
         <p class="lead">Welcome home {{username}}</p>
-        <div class="list-group" ng-repeat="article in articles">
+        <div class="list-group" ng-repeat="article in articles | orderBy:'-$id'">
             <div class="list-group-item active">
                 <h4 class="list-group-item-heading">{{article.title}}</h4>
                 <p class="list-group-item-text">{{article.post}}</p>
-                <p class="list-group-item-text article-user"><small>{{article.username}}</small></p>
+                <p class="list-group-item-text article-meta"><small>{{article.username}}</small> - <small>{{article.date}}</small></p>
             </div>
         </div>
     </div>

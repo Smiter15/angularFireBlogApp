@@ -33,6 +33,7 @@
             <a href="#" onclick="return false;" class="list-group-item active">
                 <h4 class="list-group-item-heading">{{article.title}}</h4>
                 <p class="list-group-item-text">{{article.post}}</p>
+                <p class="list-group-item-text article-meta"><small>{{article.username}}</small> - <small>{{article.date}}</small></p>
                 <span class="pull-right">
                     <button class="btn btn-xs btn-info" ng-click="editPost(article.$id)" data-target="#editModal">EDIT</button>
                     <button class="btn btn-xs btn-warning" ng-click="confirmDelete(article.$id)" data-target="#deleteModal">DELETE</button>
