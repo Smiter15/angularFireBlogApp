@@ -34,11 +34,10 @@ angular.module('myApp.addPost', ['ngRoute'])
         var email = CommonProp.getEmail();
 
         var timestamp = Firebase.ServerValue.TIMESTAMP;
-        var createdDate = $scope.createDate(timestamp);
 
         fb.push({
             unixTimestamp: timestamp,
-            date: createdDate,
+
             title: title,
             post: post,
             username: user,
@@ -56,21 +55,6 @@ angular.module('myApp.addPost', ['ngRoute'])
             }
         });
 
-    }
-
-    $scope.createDate = function(timestamp) {
-        
-        var fixedTimestamp = timestamp * 1000;
-
-        var date = new Date(parseInt(fixedTimestamp, 10));
-
-        console.log(date);
-
-        var datevalues = ('0' + date.getDate()).slice(-2) + '-' + ('0' + (date.getMonth() + 1)).slice(-2) + '-' + date.getFullYear() + ' ' + date.getHours() + ':' + date.getMinutes();
-        
-        console.log(datevalues);
-
-        return datevalues;
     }
 
     $scope.logout = function() {
