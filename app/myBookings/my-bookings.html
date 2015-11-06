@@ -1,0 +1,50 @@
+<div ng-controller="MyBookingsCtrl">
+    <div class="blog-masthead">
+        <div class="container">
+            <nav class="blog-nav">
+                <a class="blog-nav-item" href="#/welcome">Home</a>
+                <a class="blog-nav-item" href="#/me">Me</a>
+                <a class="blog-nav-item active" href="#/my-bookings">My Bookings</a>
+                <a class="blog-nav-item" href="#/addPost">Add Post</a>
+                <a class="blog-nav-item" style="cursor:pointer;" ng-click="logout();">Logout</a>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-header">
+                    <h1>AngularJS & Firebase App</h1>
+                </div>
+                <p class="lead">Welcome to your bookings {{username}}</p>
+            </div>
+        </div>
+        
+        <div class="row times">
+    
+            <div class="col-xs-2 text-center" ng-repeat="(dayKey, day) in days">
+
+                <h2>{{ day.name }}</h2>
+                <div class="time-slot" ng-repeat="(slotKey, slot) in day.slots">
+                    <input type="checkbox" id="{{ day.name }}-{{ $index }}" ng-model="slot.booked" ng-disabled="slot.booked">
+                    <label for="{{ day.name }}-{{ $index }}">{{ slot.time }}<br>
+                        <span ng-if="slot.booked">Booked</span>
+                        <span ng-if="!slot.booked">Available</span>
+                    </label>
+                    <p>{{slot.description}}</p>
+                </div>
+            </div>       
+          
+        </div>
+
+        <p class="text-center">    
+            <a href="#" ng-click="reset()" class="btn btn-primary">Reset</a>
+        </p>
+
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted"></p>
+        </div>
+    </footer>
+</div>

@@ -6,6 +6,7 @@ angular.module('myApp', [
     'myApp.register',
     'myApp.welcome',
     'myApp.me',
+    'myApp.myBookings',
     'myApp.addPost'
 ]).
 config(['$routeProvider', function($routeProvider) {
